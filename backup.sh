@@ -184,7 +184,6 @@ EOF
 else
   if [[ "${exit_code}" -eq 0 ]]; then
     printf 'Backup succeeded (exit code %s).\n' "${exit_code}"
-    printf 'Reminder: check the log file: %s\n' "${final_log}"
   else
     printf 'Backup failed (exit code %s).\n' "${exit_code}" >&2
     if [[ -s "${stderr_file}" ]]; then
