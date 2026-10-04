@@ -1,0 +1,22 @@
+See the "VPS/Restic" note in Joplin for more information.
+
+TODO:
+
+	Backup scripts:
+		- Script to run automatically every day.
+			+ Backup home and files currently on the external drive (probably
+				move them to a directory on the RAID0 array) to the VPS.
+				-> Save the exit code and the stdout of the "--verbose --verbose"
+					version of the command in a local file, deleting the file of
+					the same name created by the previous run, if it exists. On
+					failure, rename the file with a timestamp so it won't be
+					deleted by future runs of the script.
+			+ Send an email on each run of the script reporting success or
+				failure. On failure, include a reminder to review the log file.
+		- Script to run manually (probably every week).
+			+ Backup the same directories/files as the automatic script to an
+				external drive.
+			+ Create a log file in the same way as the automatic backup, but with
+				a different name.
+			+ Do not send email. Just output errors or success status on the
+				command line and a reminder to check the log file.
