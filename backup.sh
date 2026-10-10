@@ -121,6 +121,7 @@ restic -r "${REPOSITORY}" \
   backup \
   --iexclude="*.kdbx" \
   --iexclude="resticPassword" \
+  --exclude-file="excludeList.txt" \
   --compression="max" \
   "${DIR_HOME}" "${DIR_SECOND}" \
   >"${stdout_file}" 2>"${stderr_file}"
